@@ -2,7 +2,7 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
-  projectId: 'rw4fey',
+  projectId: 'unmjkg',
   chromeWebSecurity: false,
   // These settings apply everywhere unless overridden
   defaultCommandTimeout: 5000,
