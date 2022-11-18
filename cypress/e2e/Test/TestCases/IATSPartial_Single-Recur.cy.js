@@ -1,13 +1,13 @@
 /// <reference types="Cypress" />
-import ENobjects from '/Users/ievgeniiagaidarenko/ENS/ENCypress/cypress/e2e/pageObject/ENobjects.cy.js'
-import ENpageObject from '/Users/ievgeniiagaidarenko/ENS/ENCypress/cypress/e2e/pageObject/ENpageObject.cy.js'
+import ENobjects from '/Users/evyens/ENS/ENCypress/cypress/e2e/pageObject/ENobjects.cy.js'
+import ENpageObject from '/Users/evyens/ENS/ENCypress/cypress/e2e/pageObject/ENpageObject.cy.js'
 const EN = new ENobjects()
 const ENpage = new ENpageObject()
 const dayjs = require('dayjs')
 
 Cypress.dayjs = dayjs
-const todaysDate = dayjs().format('MM-DD-YYYY')
-const tomorrowsDate = dayjs().add(1, 'day').format('MM-DD-YYYY')
+const todaysDate = dayjs().format('DD-MM-YYYY')
+const tomorrowsDate = dayjs().add(1, 'hr').format('DD-MM-YYYY')
 const donationSingle = ('en_iats_partial_single_donation_' + todaysDate + '@engagingnetworks.online')
 const donationRecur = ('en_iats_partial_recur_donation_' + tomorrowsDate + '@engagingnetworks.online')
 

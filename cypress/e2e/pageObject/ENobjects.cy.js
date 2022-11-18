@@ -86,7 +86,7 @@ class en{
         return cy.get('.tax')
     }
     refund(){
-        return cy.get('.refund')
+        return cy.get('.optimalRefund')
     }
     refundAmount(){
         return cy.get('#refund__amount')

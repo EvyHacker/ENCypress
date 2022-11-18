@@ -27,23 +27,23 @@
 //      }
 //    })
 //  }
-const jsforce = require('jsforce');
+// const jsforce = require('jsforce');
 
-module.exports = (on, config) => {
-  on('task', {
-     salesforceCreate ({objectType, object}) {
-        return createObject(objectType, object, config)
-     }
-     // Add new tasks created here
-  })
-}
+// module.exports = (on, config) => {
+//   on('task', {
+//      salesforceCreate ({objectType, object}) {
+//         return createObject(objectType, object, config)
+//      }
+//      // Add new tasks created here
+//   })
+// }
 
 
- const {downloadFile} = require('cypress-downloadfile/lib/addPlugin')
-module.exports = (on, config) => {
-  on('task', {downloadFile})
-  return null
-}
+//  const {downloadFile} = require('cypress-downloadfile/lib/addPlugin')
+// module.exports = (on, config) => {
+//   on('task', {downloadFile})
+//   return null
+// }
 
 module.exports = (on, config) => {
   on('before:browser:launch', (browser, launchOptions) => {
@@ -99,7 +99,7 @@ module.exports = (on, config) => {
   on('before:browser:launch', (browser, launchOptions) => {
     if (browser.family === 'chromium' && browser.name !== 'electron') {
       // provide absolute path to unpacked extension's folder
-      launchOptions.extensions.push('/Users/ievgeniiagaidarenko/EngagingNetworks/cypress/ENCypressJenkins/cypress/extensions/gleekbfjekiniecknbkamfmkohkpodhe')
+      launchOptions.extensions.push('/Users/evyens/ENS/ENCypress/cypress/extensions/gleekbfjekiniecknbkamfmkohkpodhe')
     }
 
     return launchOptions

@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
-import ENobjects from '/Users/ievgeniiagaidarenko/ENS/ENCypress/cypress/e2e/pageObject/ENobjects.cy.js'
-import ENpageObject from '/Users/ievgeniiagaidarenko/ENS/ENCypress/cypress/e2e/pageObject/ENpageObject.cy.js'
+import ENobjects from '/Users/evyens/ENS/ENCypress/cypress/e2e/pageObject/ENobjects.cy.js'
+import ENpageObject from '/Users/evyens/ENS/ENCypress/cypress/e2e/pageObject/ENpageObject.cy.js'
 const EN = new ENobjects()
 const ENpage = new ENpageObject()
 //import 'cypress-iframe'
@@ -597,7 +597,7 @@ describe('test partial refund for Stripe gateway 3D and none 3D transactions', (
         expect(text.trim()).contains('fbs')
       })
 
-    cy.get(donationTypeSingle).eq(0).click()
+    cy.get(donationTypeSingle).eq(1).click()
     EN.receiptOrig().should('be.visible')
     EN.receiptRep().should('be.visible')
     EN.tax().should('be.visible')
@@ -614,7 +614,7 @@ describe('test partial refund for Stripe gateway 3D and none 3D transactions', (
     cy.get(donationTypeSingle).eq(0).click().trigger('mouseover')
     cy.get('.gadget__singleDonations__transaction').invoke('text').as('refund')
     cy.get('@refund').should('include', '-85.99 EUR')
-    cy.get(donationTypeSingle).eq(1).click()
+    cy.get(donationTypeSingle).eq(2).click()
     EN.refund().click()
     cy.get('.gadget__receipt > p').invoke('text').should('include', 'Amount Charged: 15 EUR')
    
@@ -632,7 +632,7 @@ describe('test partial refund for Stripe gateway 3D and none 3D transactions', (
       .then((text) => {
         expect(text.trim()).contains('fbr')
       })
-    cy.get(donationTypeRecur).eq(0).click()
+    cy.get(donationTypeRecur).eq(1).click()
     cy.get('.gadget__recurringDetail__history__item').eq(1).click()
     cy.get('.gadget__recurringDetail__history__buttons__refund > .button').click()
     cy.get('.gadget__receipt > p').invoke('text').should('include', 'Amount Charged: 100.99 EUR')

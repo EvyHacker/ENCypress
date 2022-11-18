@@ -78,6 +78,9 @@ class ENpage{
      creditCard(){
          return cy.get('#en__field_transaction_ccnumber')
      }
+     paymentType(){
+        return cy.get('#en__field_transaction_paymenttype')
+     }
 
 }
 export default ENpage
